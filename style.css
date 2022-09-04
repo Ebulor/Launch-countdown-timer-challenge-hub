@@ -153,6 +153,9 @@ hr {
   .wrapper {
     background-size: contain;
   }
+  .heading {
+    font-size: 1.5rem;
+  }
   .card {
     margin: 0 20px;
   }
