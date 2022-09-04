@@ -12,11 +12,23 @@
   --Very_dark_blue: hsl(235, 16%, 14%);
   --Very_dark_mostly_blue: hsl(234, 17%, 12%);
 }
-.wrapper {
-  background-color: var(--Very_dark_blue);
-  background-image: url(images/pattern-hills.svg), url(images/bg-stars.svg);
+body {
+  background: url("images/pattern-hills.svg"),
+    linear-gradient(
+      hsl(234.5, 15.9%, 13.5%) 0%,
+      hsl(275.3, 23.3%, 14.3%) 97%,
+      hsl(277.9, 26.8%, 13.9%) 100%
+    );
+
   background-repeat: no-repeat;
   background-position: bottom;
+  background-size: 100%, 180%;
+  z-index: -20;
+}
+.wrapper {
+  background-image: url("images/bg-stars.svg");
+
+  background-position: center;
   background-size: contain;
   min-height: 100vh;
   display: flex;
@@ -25,11 +37,12 @@
   justify-content: center;
 }
 .heading {
-  font-size: 2rem;
-  letter-spacing: 0.5rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.4rem;
   color: var(--White);
   text-transform: uppercase;
   text-align: center;
+  width: 80%;
 }
 .container {
   display: flex;
@@ -45,17 +58,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
-  width: 90px;
-  margin: 0 10px;
+  height: 90px;
+  width: 80px;
+  margin: 0 5px;
   z-index: 0;
   overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 .counter:before {
   content: "";
   position: absolute;
   background-color: var(--Dark_desaturated_blue);
-  height: 50px;
+  height: 45px;
   width: 100%;
   z-index: 1;
   top: 0;
@@ -67,7 +83,7 @@
   content: "";
   position: absolute;
   background-color: var(--Dark_desaturated_blue);
-  height: 50px;
+  height: 45px;
   width: 100%;
   z-index: -1;
   top: 50%;
@@ -76,7 +92,7 @@
 }
 .counter h1 {
   color: var(--Soft_red);
-  font-size: 3rem;
+  font-size: 2.8rem;
 }
 hr {
   width: 100%;
@@ -104,20 +120,30 @@ hr {
   color: var(--Grayish_blue);
   letter-spacing: 0.2rem;
   margin: 20px 0;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
+
 .socials a {
   color: var(--Grayish_blue);
   text-decoration: none;
-  font-size: 2rem;
-  margin: 0 20px;
+  font-size: 1.8rem;
+  margin: 0 15px;
 }
 .socials a:hover {
   color: var(--Soft_red);
 }
-@media (min-width: 800px) {
+@media (min-width: 600px) {
+  .heading {
+    font-size: 2rem;
+  }
   .counter {
-    width: 150px;
+    width: 120px;
+    height: 100px;
+    margin: 0 10px;
+  }
+  .counter:before,
+  .counter:after {
+    height: 50px;
   }
   .time {
     font-size: 1rem;
@@ -131,14 +157,14 @@ hr {
     margin: 0 20px;
   }
   .counter {
-    width: 200px;
-    height: 200px;
+    width: 140px;
+    height: 140px;
   }
   .counter:before,
   .counter:after {
-    height: 100px;
+    height: 70px;
   }
   .counter h1 {
-    font-size: 7rem;
+    font-size: 5rem;
   }
 }
