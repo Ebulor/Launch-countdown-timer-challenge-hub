@@ -123,13 +123,14 @@ hr {
   font-size: 0.6rem;
 }
 
-.socials a {
+.socials i {
   color: var(--Grayish_blue);
-  text-decoration: none;
+  border: none;
+  outline: none;
   font-size: 1.8rem;
   margin: 0 15px;
 }
-.socials a:hover {
+.socials i:hover {
   color: var(--Soft_red);
 }
 @media (min-width: 600px) {
